@@ -1,0 +1,59 @@
+body{
+
+    background-color: antiquewhite;
+
+
+
+
+}
+
+
+
+#question-line{
+
+font-size : 50px;
+padding: 10px;
+background-color: blue;
+}
+
+#row3col1{
+    padding: 10px;
+    background-color: orange;
+
+}
+
+
+#row3col2{
+
+    padding: 10px;
+    background-color: orange;
+ 
+}
+
+#option-a{
+    background-color: rgb(145, 145, 218);
+    padding:5px;
+
+}
+
+
+#option-b{
+    background-color: rgb(145, 145, 218);
+
+    padding:5px;
+    
+}
+
+#option-c{
+    background-color: rgb(145, 145, 218);
+
+    padding:5px;
+    
+}
+
+#option-d{
+    background-color: rgb(145, 145, 218);
+
+    padding:5px;
+    
+}
