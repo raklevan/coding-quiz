@@ -1,20 +1,6 @@
-var start = document.querySelector("#start-btn")
-var questionIndex = 0;
 
-var secondsLeft = 50;
-
-var $optionA = document.querySelector("#option-a");
-var $optionB = document.querySelector("#option-b");
-var $optionC = document.querySelector("#option-c");
-var $optionD = document.querySelector("#option-d");
-var title = document.querySelector("#question-line")
-
-var score = 0;
 
 var questions = [
-
-
-
   {
     title: "Commonly used data types DO NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
@@ -37,158 +23,207 @@ var questions = [
     choices: ["addEventListener", "useEvent", "hasEvent", "textContent"],
     answer: "addEventListener"
   },
-  ///etc.
 ];
 
+var score = 0;
+var $nextPage = document.querySelector("#next-page");
+var questionIndex = 0;
+
+var timer = 15;
+
+var optionA = document.querySelector("#option-a");
+
+var optionB = $("#option-b");
+var optionC = $("#option-c");
+var optionD = $("#option-d");
+var correctness = $("#correctness");
+
+
+function setTime() {
+  var timerInterval = setInterval(function () {
+    timer--;
+    $("#timeEl").text(timer + " seconds left");
+
+    if (timer === 0) {
+      clearInterval(timerInterval);
+      $(".question-page").hide();
+      $(".results-page").show();
+      document.querySelector("#final-score").textContent = window.localStorage.getItem("score")
+    }
+
+  }, 1000);
+}
+
+
+
+
+$(".question-page").hide();
+
+$(".results-page").hide();
+
+
+$("#startBtn").click(function () {
+
+
+
+  $("#viewScores").click(function () {
+
+    alert(JSON.stringify(window.localStorage))
+  })
+
+
+
+  setTime()
+
+  localStorage.setItem("score", score)
+  console.log(localStorage);
 
 
 
 
 
-start.addEventListener("click", function () {
+
+
+  $(".launch-page").hide();
+
+  $(".question-page").show();
+
 
 
 
 
   populate(questionIndex);
 
-  // if(questionIndex<questions.length){
-
-
-
-
-  $optionA.addEventListener("click", function () {
-
-
-
-    if ($optionA.textContent === questions[questionIndex].answer) {
-
+  $(optionA).click(function () {
+    if (optionA.textContent === questions[questionIndex].answer) {
+      $(correctness).text("Correct!")
       score++
-      questionIndex++;
-      populate(questionIndex);
-      console.log(score);
+      localStorage.setItem("score", score);
+      console.log(localStorage)
 
     }
 
     else {
+      $(correctness).text("Incorrect")
+
+      console.log(score)
+
+    }
+  })
+
+  $(optionB).click(function () {
+    if (document.querySelector("#option-b").textContent === questions[questionIndex].answer) {
+      $(correctness).text("Correct!")
+      score++
+      localStorage.setItem("score", score);
+      console.log(localStorage)
+
+    }
+
+    else {
+      $(correctness).text("Incorrect")
+
+      console.log(score)
+
+    }
+  })
+
+  $(optionC).click(function () {
+    if (document.querySelector("#option-c").textContent === questions[questionIndex].answer) {
+      $(correctness).text("Correct!")
+      score++
+      localStorage.setItem("score", score);
+      console.log(localStorage)
+
+    }
+
+    else {
+      $(correctness).text("Incorrect")
+
+      console.log(score)
 
 
-      questionIndex++;
-      populate(questionIndex);
+    }
+  })
 
-      console.log(score);
+  $(optionD).click(function () {
+    if (document.querySelector("#option-d").textContent === questions[questionIndex].answer) {
+      $(correctness).text("Correct!")
+      score++
+      localStorage.setItem("score", score);
+      console.log(localStorage)
 
+
+    }
+    else {
+      $(correctness).text("Incorrect")
+
+      console.log(score)
+  
 
     }
 
 
   })
 
-  $optionB.addEventListener("click", function () {
-    if ($optionB.textContent === questions[questionIndex].answer) {
 
-      score++
-      questionIndex++;
-      populate(questionIndex);
-      console.log(score);
+  $("#next-page").click(function () {
 
-    }
+    questionIndex++
+    populate(questionIndex);
 
-    else {
+    function fourthClick() {
+      if (questionIndex === 3) {
 
+        $("#next-page").off("click");
+        $("#next-page").text("Submit");
+        $("#next-page").click(function () {
+          $(".question-page").hide();
+          $(".results-page").show();
+          document.querySelector("#final-score").textContent = window.localStorage.getItem("score")
 
-      questionIndex++;
-      populate(questionIndex);
+          var initials = $("#initials-input").val();
 
-      console.log(score);
+          var submit = $("#submit-initials-btn");
+          submit.on("click", function (event) {
 
+            event.preventDefault();
 
-    }
-  })
+            console.log(initials);
 
-
-  $optionC.addEventListener("click", function () {
-    if ($optionC.textContent === questions[questionIndex].answer) {
-
-      score++
-      questionIndex++;
-      populate(questionIndex);
-      console.log(score);
-
-    }
-
-    else {
+            window.localStorage.setItem("initials-score", initials + score)
 
 
-      questionIndex++;
-      populate(questionIndex);
 
-      console.log(score);
+          })
 
+        })
+
+      }
 
     }
+    fourthClick();
+
 
   })
-
-  $optionD.addEventListener("click", function () {
-    if ($optionD.textContent === questions[questionIndex].answer) {
-
-      score++
-      questionIndex++;
-      populate(questionIndex);
-      console.log(score);
-
-    }
-
-    else {
-
-
-      questionIndex++;
-      populate(questionIndex);
-
-      console.log(score);
-
-
-    }
-
-  })
-
-
 
 })
-
-
-
-
-
-// title.textContent = questions[questionIndex].title;
-// $optionA.textContent=questions[questionIndex].choices[0];
-// $optionB.textContent=questions[questionIndex].choices[1];
-// $optionC.textContent=questions[questionIndex].choices[2];
-// $optionD.textContent=questions[questionIndex].choices[3];
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 function populate(i) {
 
 
-  title.textContent = questions[i].title;
-  $optionA.textContent = questions[i].choices[0];
-  $optionB.textContent = questions[i].choices[1];
-  $optionC.textContent = questions[i].choices[2];
-  $optionD.textContent = questions[i].choices[3];
+  $("#title").text(questions[i].title);
 
+
+
+  $(optionA).text(questions[i].choices[0]);
+
+  $(optionB).text(questions[i].choices[1]);
+
+  $(optionC).text(questions[i].choices[2]);
+
+  $(optionD).text(questions[i].choices[3]);
 
 }

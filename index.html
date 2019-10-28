@@ -1,5 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <nav class="navbar" style="background-color: #d0dbdc; height: 100px">
+        <ul>
+            <li id="first"> <button class="button" type="button" id="viewScores">View High Scores</button></li>
+            <li id="second"> </li>
+            <li id="timeEl"> </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+
+
+
+
+        <div class="row launch-page">
+
+            <div class="col-10 text-center" id="launch-content">
+
+                <h1> Press the Start button to begin the quiz:</h1>
+
+                <a><button class="btn-lg" id="startBtn">Start</button></a>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="row question-page">
+
+            <div class="col-10 text-center question-content">
+
+                <div class="row question-row">
+
+                    <div class="col" id="question-column">
+
+                        <div class="row">
+                            <p id="title"> </p>
+                        </div>
+
+
+
+      
+                        <div class="row">
+
+
+                            <ul id="optionsList">
+
+                                <li class="choices" id="option-a"></li>
+                                <li class="choices" id="option-b"></li>
+                                <li class="choices" id="option-c"></li>
+                                <li class="choices" id="option-d"></li>
+                            </ul>
+                        </div>
+
+                    </div>>
+
+                </div>
+
+                <div class="row nextBtn-row">
+                    <div class="col correctness-column text-center">
+                        <p id="correctness">
+
+                        </p>
+                    </div>
+                    <div class="col nextBtn-column">
+
+                        <button id="next-page">Next</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="row results-page">
+
+
+
+
+            <div class="col-10 results-content">
+                <p> All done!</p>
+
+                <p> Your final score is: <span id="final-score"> </span></p>
+                <p> Input your initials
+                    <a>
+                        
+                        <input type="text" id="initials-input"> <button class="button" id="submit-initials-btn" type="button">Submit</button>
+                       
+                    </a>
+                </p>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<!-- <body>
+
+
+    <div id="thisDiv">
+        <button class="button" id="myBtn"> First </button>
+
+        
+
+
+    </div>
+
+
+    <div id = "thatDiv">
+
+        <p id = "paragraph">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequatur, dolorem tempora quas placeat repudiandae iure. Beatae mollitia facere debitis? Excepturi quod blanditiis beatae doloremque animi eaque optio debitis facilis!
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatum, nostrum labore, ipsum natus fugiat dolor rerum vel explicabo architecto impedit sequi animi culpa accusantium? Libero rem minus veniam officia.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto similique consectetur dicta fugit dolorum incidunt consequuntur tenetur perspiciatis, sapiente iste! Velit tempore aliquam ea nobis alias, ad nisi unde distinctio!
+
+
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+    <script>
+
+
+
+        $("#thatDiv").hide();
+
+
+// $("#thisDiv").hide();
+
+
+
+
+        // var array =[one, two, three, four];
+
+
+        
+
+
+
+        // function change(){
+
+        //     document.querySelector(".button").textContent="Second";
+
+        // }
+
+        // change();
+
+
+        var counter = 0;
+
+
+        console.log(counter);
+
+
+
+        $(".button").click(function(){
+
+        // $(".button").on("click", function () {
+
+
+            $("#thatDiv").show();
+
+
+            $(".button").text("Second")
+
+            // document.querySelector(".button").textContent = "Second";
+
+            counter++
+
+            console.log("Hi")
+            console.log(counter)
+
+            function secondClick() {
+
+                $(".button").click(function(){
+
+                    $(".button").off("click");
+
+                })
+
+         
+
+                if (counter === 1) {
+
+                    $(".button").on("click", function () {
+                        document.querySelector(".button").textContent = "Third";
+                        $("#paragraph").append( "a;lskdjf;laksdhjfl;kajsdfl;kal;skdjfl;aksdjfl;kasjdl;kfjadls;kfjhaklsdhfl;kajhsdlfkjhasldkjfhlaksjdhfkajsdhlfkjahsdlfkjhalskdjf" )
+                       
+
+                        console.log("Hi Again!")
+                    }
+                    )
+                }
+
+
+
+            }
+                        secondClick();
+
+
+        }
+        )
+
+
+
+
+        // var innerDiv =$("<div>");
+
+        // var p = $("<p>");
+
+
+
+
+        // innerDiv.append(p)
+
+        // $("#thisDiv").prepend(innerDiv);
+
+
+
+    </script>
+
+</body>  -->
+
+</html>
+
+
+
+<!-- 
+var questions = [
+{
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts"
+},
+{
+    title: "The condition in an if / else statement is enclosed within ____.",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses"
+},
+
+{
+    title: "The the javascript 'or' operator is written ____.",
+    choices: ["OR", "||", "&&", "##"],
+    answer: "||"
+},
+
+{
+    title: "To add a click event to a button, the  ____ method is used",
+    choices: ["addEventListener", "useEvent", "hasEvent", "textContent"],
+    answer: "addEventListener"
+},
+///etc.
+];
+
+var score = 0;
+var $nextPage = document.querySelector("#next-page");
+var questionIndex = 0;
+
+var timer = 15;
+
+var optionA = document.querySelector("#option-a");
+
+var optionB = $("#option-b");
+var optionC = $("#option-c");
+var optionD = $("#option-d");
+var correctness = $("#correctness");
+var initials=$("#initials-input").val();
+var highScore={
+initials: initials,
+score: score,
+
+}
+
+// var optionsArray = [optionA, optionB, optionC, optionD];
+function setTime() {
+var timerInterval = setInterval(function() {
+  timer--;
+  $("#timeEl").text(timer+" seconds left");
+
+  if(timer === 0) {
+    $("#next-page").off("click");
+    $("#next-page").text("Submit");
+    $("#next-page").click(function(){
+        $(".question-page").hide();
+        $(".results-page").show();
+        document.querySelector("#final-score").textContent=window.localStorage.getItem("score")
+        // $("submit-initials-btn").click(function(){
+        //     initials=$("#initials-input").val();
+
+        //     window.localStorage.setItem("highscore", JSON.stringify(highScore))
+        //     console.log(localStorage);
+            
+
+        // })
+
+    })
+  }
+
+}, 1000);
+}
+
+
+
+
+$(".question-page").hide();
+
+$(".results-page").hide();
+
+
+$("#startBtn").click(function () {
+
+
+
+setTime()
+
+localStorage.setItem("score", score)
+console.log(localStorage);
+
+
+
+
+
+
+
+$(".launch-page").hide();
+
+$(".question-page").show();
+
+
+
+
+
+populate(questionIndex);
+// console.log(document.querySelector("#option-c").textContent)
+
+// console.log(Boolean(document.querySelector("#option-c").textContent=== questions[questionIndex].answer))
+
+// console.log(document.querySelector("#option-a").textContent)
+
+// console.log(optionA.textContent)
+// console.log(questions[questionIndex].answer)
+
+// console.log(Boolean(optionC.textContent === questions[questionIndex].answer))
+
+$(optionA).click(function () {
+    if (optionA.textContent === questions[questionIndex].answer) {
+        $(correctness).text("Correct!")
+        score++
+        // console.log(score)
+        localStorage.setItem("score", score);
+        console.log(localStorage)
+
+    }
+
+    else {
+        $(correctness).text("Incorrect")
+
+        console.log(score)
+        // populate(questionIndex);
+
+    }
+}   )
+
+$(optionB).click(function () {
+    if (document.querySelector("#option-b").textContent === questions[questionIndex].answer) {
+        $(correctness).text("Correct!")
+        score++
+        // console.log(score)
+        localStorage.setItem("score", score);
+        console.log(localStorage)
+
+    }
+
+    else {
+        $(correctness).text("Incorrect")
+
+        console.log(score)
+        // populate(questionIndex);
+
+    }
+})
+
+$(optionC).click(function () {
+    if (document.querySelector("#option-c").textContent=== questions[questionIndex].answer) {
+        $(correctness).text("Correct!")
+        score++
+        // console.log(score)
+        localStorage.setItem("score", score);
+        console.log(localStorage)
+
+    }
+
+    else {
+        $(correctness).text("Incorrect")
+
+        console.log(score)
+        // populate(questionIndex);
+
+    }
+})
+
+$(optionD).click(function () {
+    if (document.querySelector("#option-d").textContent=== questions[questionIndex].answer) {
+        $(correctness).text("Correct!")
+        score++
+        // console.log(score)
+        localStorage.setItem("score", score);
+        console.log(localStorage)
+
+
+    }
+    else {
+        $(correctness).text("Incorrect")
+
+        console.log(score)
+        // populate(questionIndex);
+
+    }
+
+
+})
+
+
+$("#next-page").click(function () {
+
+   questionIndex++
+    populate(questionIndex);
+
+    function fourthClick(){
+        if(questionIndex===3){
+
+            $("#next-page").off("click");
+            $("#next-page").text("Submit");
+            $("#next-page").click(function(){
+                $(".question-page").hide();
+                $(".results-page").show();
+                document.querySelector("#final-score").textContent=window.localStorage.getItem("score")
+                // $("submit-initials-btn").click(function(){
+                //     initials=$("#initials-input").val();
+
+                //     window.localStorage.setItem("highscore", JSON.stringify(highScore))
+                //     console.log(localStorage);
+                    
+
+                // })
+
+            })
+
+
+
+
+        }
+
+
+    }
+fourthClick();
+
+
+})
+
+})
+
+
+
+function populate(i) {
+
+
+$("#title").text(questions[i].title);
+
+
+
+$(optionA).text(questions[i].choices[0]);
+
+
+// $(optionA).click(function () {
+//     if (optionA.textContent === questions[i].choices[0]) {
+//         $(correctness).text("Correct!")
+//         score++
+//         console.log(score)
+
+//     }
+
+//     else {
+//         $(correctness).text("Incorrect")
+
+//     } })
+
+
+$(optionB).text(questions[i].choices[1]);
+
+
+
+
+
+
+
+// console.log(optionB.textContent)
+
+// $(optionB).click(function () {
+//     if (optionB.textContent === questions[i].choices[1]) {
+//         $(correctness).text("Correct!")
+//         score++
+//         console.log(score)
+
+//     }
+
+//     else {
+//         $(correctness).text("Incorrect")
+
+//     } })
+
+
+$(optionC).text(questions[i].choices[2]);
+
+// $(optionC).click(function () {
+//     if (optionC.textContent === questions[i].choices[0]) {
+//         $(correctness).text("Correct!")
+//         score++
+//         console.log(score)
+
+//     }
+
+//     else {
+//         $(correctness).text("Incorrect")
+
+//     } })
+
+
+$(optionD).text(questions[i].choices[3]);
+
+// $(optionD).click(function () {
+//     if (optionD.textContent === questions[i].choices[0]) {
+//         $(correctness).text("Correct!")
+//         score++
+//         console.log(score)
+
+//     }
+
+//     else {
+//         $(correctness).text("Incorrect")
+
+//     } })
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+// for (let j = 0; j < questions[i].choices.length; j++) {
+
+//     $(optionsArray[j]).text(questions[i].choices[j]);
+
+//     $(optionsArray[j]).click(function(){
+//         if(optionsArray[j]===questions[i].choices[j]){
+
+//             console.log("hello")
+//         }
+//         console.log(optionA.textContent)
+
+//     })
+
+
+// }
+
+// $("#title").text(questions[i].title);
+// optionA.text(questions[i].choices[0])
+// optionB.text(questions[i].choices[1])
+// optionC.text(questions[i].choices[2])
+// optionD.text(questions[i].choices[3])
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -16,13 +687,13 @@
     
     <div class="row" id ="first-row">
 
-      <div class="col"> <button id = "start-btn">Start</button> </div>  
+      <div class="col-2 top" id = "top"> <button id = "start-btn">Start</button> </div>  
      
 
-      <div class="col-10 text-center"><button id = "View Highscores">View Highscores</button></div>  
+      <div class="col-6 text-center top"><button id = "View Highscores">View Highscores</button></div>  
      
 
-      <div class="col"><a id ="timer"> 0</a></div>  
+      <div class="col-2 top"><a id ="timer"> 0</a></div>  
     </div>
 
 
@@ -31,7 +702,7 @@
 
       <div class="row" id ="second-row">
 
-        <div class = "col-10 text-center" id="question-line">
+        <div class = "col-10 text-center col-centered" id="question-line">
           <p id="question-line"> Press the Start button to begin the quiz</p>
           </div>
       </div>
@@ -79,4 +750,4 @@
   <script src="assets/js/script.js"></script>
 
 </body>
-</html> 
+</html>  --> -->
