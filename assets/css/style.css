@@ -22,6 +22,7 @@ nav li {
 }
 
 .question-content {
+opacity:0.8;
 background-color:rgb(229, 239, 240);
 border-style: groove;
 border-color:rgb(223, 235, 234);
