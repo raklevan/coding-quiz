@@ -200,6 +200,8 @@ $("#startBtn").click(function () {
 
             window.localStorage.setItem("highscore", value + " score "+ score)
 
+            $(".results-content").append("<p> Highscore: "+localStorage.getItem("highscore")+"</p><hr>")
+
 
 
           })
