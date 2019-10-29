@@ -29,7 +29,7 @@ var score = 0;
 var $nextPage = document.querySelector("#next-page");
 var questionIndex = 0;
 
-var timer = 15;
+var timer = 60;
 
 var optionA = document.querySelector("#option-a");
 
@@ -67,16 +67,18 @@ $("#startBtn").click(function () {
 
 
   $("#viewScores").click(function () {
+    alert(window.localStorage.getItem("highscore"))
 
-    alert(JSON.stringify(window.localStorage))
+
+    // alert(JSON.stringify(window.localStorage("highscore")))
   })
 
 
 
   setTime()
 
-  localStorage.setItem("score", score)
-  console.log(localStorage);
+  // localStorage.setItem("score", score)
+  // console.log(localStorage);
 
 
 
@@ -99,7 +101,7 @@ $("#startBtn").click(function () {
       $(correctness).text("Correct!")
       score++
       localStorage.setItem("score", score);
-      console.log(localStorage)
+      console.log(score)
 
     }
 
@@ -116,7 +118,7 @@ $("#startBtn").click(function () {
       $(correctness).text("Correct!")
       score++
       localStorage.setItem("score", score);
-      console.log(localStorage)
+      console.log(score)
 
     }
 
@@ -133,7 +135,7 @@ $("#startBtn").click(function () {
       $(correctness).text("Correct!")
       score++
       localStorage.setItem("score", score);
-      console.log(localStorage)
+      console.log(score)
 
     }
 
@@ -151,7 +153,7 @@ $("#startBtn").click(function () {
       $(correctness).text("Correct!")
       score++
       localStorage.setItem("score", score);
-      console.log(localStorage)
+      console.log(score)
 
 
     }
@@ -182,16 +184,21 @@ $("#startBtn").click(function () {
           $(".results-page").show();
           document.querySelector("#final-score").textContent = window.localStorage.getItem("score")
 
-          var initials = $("#initials-input").val();
+          // var initials = $("#initials-input").val();
+
+         
 
           var submit = $("#submit-initials-btn");
           submit.on("click", function (event) {
+        
 
             event.preventDefault();
+            var initials = $(this).siblings("input");
+            var value =initials.val()
 
             console.log(initials);
 
-            window.localStorage.setItem("initials-score", initials + score)
+            window.localStorage.setItem("highscore", value + " score "+ score)
 
 
 
