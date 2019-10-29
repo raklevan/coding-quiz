@@ -48,7 +48,7 @@ function setTime() {
       clearInterval(timerInterval);
       $(".question-page").hide();
       $(".results-page").show();
-      document.querySelector("#final-score").textContent = window.localStorage.getItem("score")
+      document.querySelector("#final-score").textContent = window.localStorage.getItem("highscore")
     }
 
   }, 1000);
