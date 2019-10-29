@@ -15,9 +15,9 @@ A timer-based javascript coding quiz which keeps track of user scores
 ​
 ### Screenshots
 ​
-![Image](screenshot1.jpeg)
+![Image](screenshot1.jpg)
 ​
-![Image](screenshot2.jpg)
+![Image](screenshot2.jpeg)
 
 ![Image](screenshot3.jpg)
 ​
