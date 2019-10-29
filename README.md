@@ -19,7 +19,9 @@ A timer-based javascript coding quiz which keeps track of user scores
 ​
 ![Image](screenshot2.jpeg)
 
-![Image](screenshot3.jpg)
+![Image](screenshot4.jpeg)
+![Image](screenshot5.jpeg)
+
 ​
 ### Link
 https://raklevan.github.io/coding-quiz/
